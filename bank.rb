@@ -1,7 +1,7 @@
 class Bank
   
-  def reduce(source, currency)
-    source.reduce(currency)
+  def reduce(source, to)
+    source.reduce(self, to)
   end
 
   def add_rate(source, dest, rate)
