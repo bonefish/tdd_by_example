@@ -9,7 +9,7 @@ class Money
   end
   
   def eql?(money)
-    @amount == money.amount && currency == money.currency
+    amount == money.amount && currency == money.currency
   end
   
   def self.dollar(amount)
