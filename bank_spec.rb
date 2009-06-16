@@ -24,4 +24,14 @@ describe Bank do
     result = @bank.reduce(Money.franc(2), "USD")
     result.should eql(Money.dollar(1))
   end
+  
+  it "should have any identity rate of 1" do
+    @bank.rate("USD","USD").should == 1
+  end
+  
+  it "should store rates given to it" do
+    @bank.add_rate("CHF", "USD", 2)
+    @bank.rate("CHF", "USD").should == 2
+  end
+
 end
