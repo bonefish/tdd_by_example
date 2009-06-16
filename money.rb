@@ -28,7 +28,9 @@ class Money
     Sum.new(self, addend)
   end
   
-  def reduce(currency)
-    self
+  def reduce(to)
+    rate = (currency == "CHF" && to == "USD") ? 2 : 1
+    Money.new(amount/rate, to)
   end
+
 end
