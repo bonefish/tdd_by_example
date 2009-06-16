@@ -9,4 +9,7 @@ class Franc < Money
     Franc.new(@amount * multiplier)
   end
 
+  def currency
+    "CHF"
+  end
 end

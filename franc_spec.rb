@@ -14,4 +14,9 @@ describe Franc do
   it "should handle inequality" do
     Money.franc(5).should_not eql(Money.franc(6))
   end
+
+  it "should have the right currency" do
+    Money.franc(1).currency.should == "CHF"
+  end
+
 end

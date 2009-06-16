@@ -18,4 +18,8 @@ describe Dollar do
   it "should handle equality across different currencies" do
     Money.dollar(5).should_not eql(Money.franc(5))
   end
+  
+  it "should have the right currency" do
+    Money.dollar(1).currency.should == "USD"
+  end
 end

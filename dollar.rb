@@ -10,4 +10,7 @@ class Dollar < Money
     Dollar.new(@amount * multiplier)
   end
   
+  def currency
+    "USD"
+  end
 end
