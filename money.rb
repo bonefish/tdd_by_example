@@ -8,11 +8,11 @@ class Money
   end
   
   def self.dollar(amount)
-    Dollar.new(amount)
+    Dollar.new(amount, nil)
   end
 
   def self.franc(amount)
-    Franc.new(amount)
+    Franc.new(amount, nil)
   end
 
 end
