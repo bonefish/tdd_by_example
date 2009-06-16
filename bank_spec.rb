@@ -8,7 +8,7 @@ describe Bank do
     @bank = Bank.new
   end
 
-  it "reducing a sum of the same currency gives a money on that currency" do
+  it "reducing a sum of the same currency gives a money in that currency" do
     sum =  Sum.new(Money.dollar(3),Money.dollar(4))
     result = @bank.reduce(sum, "USD")
     result.should eql(Money.dollar(7))
@@ -23,6 +23,14 @@ describe Bank do
     @bank.add_rate("CHF", "USD", 2)
     result = @bank.reduce(Money.franc(2), "USD")
     result.should eql(Money.dollar(1))
+  end
+  
+  it "should reduce a sum of different currencies" do
+    fivebucks = Money.dollar(5)
+    tenfrancs = Money.franc(10)
+    @bank.add_rate("CHF", "USD", 2)
+    result = @bank.reduce(fivebucks+tenfrancs,"USD")
+    result.should == Money.dollar(10)
   end
   
   it "should have any identity rate of 1" do
