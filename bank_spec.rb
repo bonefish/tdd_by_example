@@ -30,7 +30,7 @@ describe Bank do
     tenfrancs = Money.franc(10)
     @bank.add_rate("CHF", "USD", 2)
     result = @bank.reduce(fivebucks+tenfrancs,"USD")
-    result.should == Money.dollar(10)
+    result.should eql(Money.dollar(10))
   end
   
   it "should have any identity rate of 1" do
