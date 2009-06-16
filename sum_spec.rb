@@ -16,4 +16,14 @@ describe Sum do
     result = @bank.reduce(sum,"USD")
     result.should eql(Money.dollar(15))
   end
+
+  it "should reduce the multiplication of a sum" do
+    fivebucks = Money.dollar(5)
+    tenfrancs = Money.franc(10)
+    @bank.add_rate("CHF", "USD", 2)
+    sum = Sum.new(fivebucks, tenfrancs).times(2)
+    result = @bank.reduce(sum,"USD")
+    result.should eql(Money.dollar(20))
+  end
+
 end
