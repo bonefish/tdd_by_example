@@ -24,4 +24,7 @@ class Money
     Money.new(amount, "CHF")
   end
 
+  def + (money)
+    Money.new(amount + money.amount, currency)
+  end
 end

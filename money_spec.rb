@@ -35,4 +35,8 @@ describe Money do
     Money.dollar(1).amount.should == 1
   end
   
+  it "should handle same currency addition" do
+    sum = Money.dollar(5) + Money.dollar(5)
+    Money.dollar(10).should eql(sum)
+  end
 end
