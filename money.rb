@@ -3,6 +3,11 @@ class Money
   attr_reader :amount
   attr_reader :currency
 
+  def initialize(amount, currency)
+    @amount = amount
+    @currency = currency
+  end
+  
   def eql?(money)
     @amount == money.amount && self.class == money.class
   end
