@@ -1,7 +1,10 @@
 class Bank
   
-  def reduce(sum, currency)
-    sum.reduce(currency)
+  def reduce(source, currency)
+    if source.class == Money
+      return source
+    end
+    source.reduce(currency)
   end
     
 end

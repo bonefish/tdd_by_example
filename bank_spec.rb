@@ -11,4 +11,9 @@ describe Bank do
     result.should eql(Money.dollar(7))
   end
 
+  it "should be able to reduce a single Money argument rather than a sum" do
+    bank = Bank.new
+    result = bank.reduce(Money.dollar(1), "USD")
+    result.should eql(Money.dollar(1))
+  end
 end
