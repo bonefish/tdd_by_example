@@ -1,5 +1,6 @@
 require 'money'
 require 'bank'
+require 'sum'
   
 describe Money do
   it "should handle multiplication" do
@@ -42,6 +43,13 @@ describe Money do
     bank = Bank.new
     reduced = bank.reduce(sum, "USD")
     Money.dollar(10).should eql(reduced)
+  end
+
+  it "adding two monies should return a sum" do
+    five = Money.dollar(5)
+    sum =  five + five
+    sum.augend.should eql(five)
+    sum.addend.should eql(five)
   end
 
 end
