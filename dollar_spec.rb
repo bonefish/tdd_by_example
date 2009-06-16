@@ -16,6 +16,6 @@ describe Dollar do
   end
 
   it "should handle equality across different currencies" do
-    Money.dollar(5).should_not eql(Franc.new(5))
+    Money.dollar(5).should_not eql(Money.franc(5))
   end
 end

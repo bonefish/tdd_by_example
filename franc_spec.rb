@@ -2,16 +2,16 @@ require 'franc'
   
 describe Franc do
   it "should handle multiplication" do
-    five = Franc.new(5)
-    five.times(2).should eql(Franc.new(10))
-    five.times(3).should eql(Franc.new(15))
+    five = Money.franc(5)
+    five.times(2).should eql(Money.franc(10))
+    five.times(3).should eql(Money.franc(15))
   end
 
   it "should handle equality" do
-    Franc.new(5).should eql(Franc.new(5))
+    Money.franc(5).should eql(Money.franc(5))
   end
 
   it "should handle inequality" do
-    Franc.new(5).should_not eql(Franc.new(6))
+    Money.franc(5).should_not eql(Money.franc(6))
   end
 end

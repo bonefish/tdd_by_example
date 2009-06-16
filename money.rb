@@ -10,4 +10,8 @@ class Money
     Dollar.new(amount)
   end
 
+  def self.franc(amount)
+    Franc.new(amount)
+  end
+
 end
