@@ -1,4 +1,5 @@
 require 'money'
+require 'bank'
   
 describe Money do
   it "should handle multiplication" do
@@ -36,7 +37,11 @@ describe Money do
   end
   
   it "should handle same currency addition" do
-    sum = Money.dollar(5) + Money.dollar(5)
-    Money.dollar(10).should eql(sum)
+    five = Money.dollar(5)
+    sum =  five + five
+    bank = Bank.new
+    reduced = bank.reduce(sum, "USD")
+    Money.dollar(10).should eql(reduced)
   end
+
 end
